@@ -1,0 +1,21 @@
+.container,
+.post {
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    color: brown;
+}
+
+.title {
+    width: 50%;
+    color: rgb(226, 28, 28);
+}
+
+.post,
+.title,
+h1 {
+    margin: 0 15%;
+    padding: 20px;
+}
