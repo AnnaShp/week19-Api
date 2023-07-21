@@ -1,0 +1,36 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10%;
+}
+
+.inner_cont {
+    display: flex;
+    flex-direction: row;
+}
+
+h1 {
+    margin-left: 45%;
+}
+
+input {
+    width: 30%;
+    height: 35px;
+    margin-right: 15px;
+    border: 2px solid rgb(178, 177, 177, 0.2);
+}
+
+input:hover {
+    border: 2px solid rgb(97, 176, 123);
+}
+
+#btn_add:hover {
+    border: 3px solid rgb(30, 79, 57, 0.4);
+}
+
+#btn_add {
+    width: 150px;
+    height: 40px;
+    background-color: rgb(97, 176, 123);
+    border: 2px solid rgba(81, 170, 131, 0.3);
+}
