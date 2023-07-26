@@ -1,35 +1,26 @@
 
 // Переменные для работы
-const postTitle = document.getElementById('title');
-const postBody = document.getElementById('boby');
 const btnAddPost = document.getElementById('btn_add');
 const posts = document.querySelector('.posts');
 
 // массив постов
 let postList = [];
 
-document.addEventListener('DOMContentLoaded', function (evt) {
-    evt.preventDefault();
-});
-
 btnAddPost.addEventListener('click', function sendPost() {
+    let post = {
+        title: document.getElementById('title').value,
+        body: document.getElementById('body').value,
+    };
+
     fetch('https://jsonplaceholder.typicode.com/posts', {
         method: 'POST',
         headers: {
             "Content-type": "application/json; charset=UTF-8"
         },
-        body: JSON.stringify({
-            title: postTitle,
-            body: postBody,
-        }),
+        body: JSON.stringify(post),
     })
         .then(response => response.json())
         .then(data => {
-            let post = {
-                title: postTitle.value,
-                body: postBody.value,
-            };
-            // console.log(post);
             postList.push(post);
 
             // переменная с последним постом в массиве
@@ -45,8 +36,8 @@ btnAddPost.addEventListener('click', function sendPost() {
             newP.textContent = lastPost.body;
 
             posts.append(titlePost, newP);
-            postTitle.value = '';
-            postBody.value = '';
+            title.value = '';
+            body.value = '';
         })
         .catch(error => console.log(error));
 })
